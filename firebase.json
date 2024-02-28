@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "/testbackfire/Front/vite",
+    "public": "server",
     "ignore": [
       "firebase.json",
       "**/.*",
