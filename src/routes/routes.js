@@ -15,7 +15,7 @@ const db = admin.database()
 routes.get('/',(req, res) =>{
     db.ref('contactos').once('value',(snapshot)=>{
         const data = snapshot.val()
-        res.render('index', {contactos: data})
+        res.json(data)
     })
     console.log("Get en index");
 })
@@ -27,12 +27,12 @@ routes.post('/new-contact', (req,res)=>{
         phone: req.body.phone
     }
     db.ref('contactos').push(newContact)
-    res.redirect('/')
+    res.sendStatus(201)
 })
 
-routes.get('/borrar/:id', (req,res)=>{
+routes.delete('/borrar/:id', (req,res)=>{
     db.ref('contactos/' + req.params.id).remove()
-    res.redirect('/')
+    res.sendStatus(204)
 })
 
 module.exports = routes;
