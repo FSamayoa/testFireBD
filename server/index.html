@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hey</title>
+    <title>API Test</title>
 </head>
 <body>
-    <h1>hola</h1>
+    <div id="data-container">
+        <!-- Aquí se insertará el JSON -->
+    </div>
+    <script>
+        // Cargar los datos JSON mediante una solicitud AJAX
+        fetch('/')
+            .then(response => response.json())
+            .then(data => {
+                // Actualizar el contenido del elemento data-container con los datos JSON
+                document.getElementById('data-container').innerText = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error al cargar los datos:', error));
+    </script>
 </body>
 </html>

@@ -20,7 +20,7 @@ server.use(express.json());
 server.use(require('./routes/routes'))
 
 //*static Files
-server.use(express.static(path.join(__dirname,'public')));
+server.use(express.static(path.join(__dirname, '../server')));
 
 
 module.exports = server
