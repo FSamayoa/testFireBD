@@ -6,7 +6,9 @@ const path = require('path');
 const server = express();
 
 
-server.use(cors());
+server.use(cors({
+    origin: '*' 
+  }));
 
 //*middlewares
 server.use(morgan('dev'));
