@@ -1,7 +1,6 @@
 const { Router } = require("express");
 const routes = Router();
 const admin = require("firebase-admin");
-const fs = require('fs');
 
 require("dotenv").config();
 
@@ -15,7 +14,7 @@ admin.initializeApp({
 
 const db = admin.database();
 
-routes.get("/", async (req, res) => {
+routes.get("/data", async (req, res) => {
 //   try {
 //     db.ref("contactos").once("value", (snapshot) => {
 //       const data = snapshot.val();
