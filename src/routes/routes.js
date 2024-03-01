@@ -14,7 +14,7 @@ admin.initializeApp({
 
 const db = admin.database();
 
-routes.get("/data", async (req, res) => {
+routes.get("/", async (req, res) => {
 //   try {
 //     db.ref("contactos").once("value", (snapshot) => {
 //       const data = snapshot.val();
