@@ -12,7 +12,7 @@ server.use(cors({
 
 //*middlewares
 server.use(morgan('dev'));
-server.use(express.urlencoded({extended: false}));
+    server.use(express.urlencoded({extended: true}));
 server.use(express.json());
 
 //*routes
